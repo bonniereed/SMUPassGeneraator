@@ -2,29 +2,43 @@
 var generateBtn = document.querySelector("#generate");
 var upperCaseChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 var lowerCaseChar = 'abcdefghijklmnopqrstuvwxyz';
-var specialChar = ['!@#$%^&*'];
+var specialChar = ['!"#$%&*+-./:;<=>?@\[\\\]^_`\{|\}~'];
 var numberChar = ['1234567890'];
+var chooseNothing = 0;
 var password = "";
 var keyChar = "";
 
  //Prompts user for use of uppercase letters in password.
   function hasUpper() {
     var upChars = window.confirm("Would you like upper case letters in your password?");
+    if (upChars) {
+      chooseNothing++;
+    }
+
     return upChars;
   }
   //Prompts user for use of lowercase letters in password.
   function hasLower() {
     var lowChars = window.confirm("Would you like lower case letters in your password?");
+    if (lowChars) {
+      chooseNothing++;
+    }
     return lowChars;
   }
   //Prompts user for use of special characters in password.
   function hasSpec() {
     var specChars = window.confirm("Would you like special characters in your password?");
+  if (specChars){
+    chooseNothing++
+  }
     return specChars;
   }
   //Prompts user for use of numbers in password.
   function hasNum() {
     var numChars = window.confirm("Would you like numbers in your password?");
+    if (numChars) {
+      chooseNothing++;
+    }
     return numChars;
   }
 // Generates the password based on user input from on screen prompts.
@@ -63,6 +77,11 @@ var keyChar = "";
   }
     // runs through each of the listed if statements and increments until passOptionlen user is met.
   for (let index = password.length; index < passOptionLen; index++) {
+    //If user did not make a selection this alerts the user that it is required.
+    if (chooseNothing === 0 ) {
+      alert ("You must make a selection from the character prompts.");
+      generatePassword();
+    }
     password = password + keyChar[(Math.floor(Math.random()*keyChar.length))];
     document.querySelector("#password").innerHTML = password;
   } return password;
