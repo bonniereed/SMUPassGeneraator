@@ -1,12 +1,9 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-// var upperCaseChar = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var upperCaseChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 var lowerCaseChar = 'abcdefghijklmnopqrstuvwxyz';
 var specialChar = ['!@#$%^&*'];
 var numberChar = ['1234567890'];
-// var specialChar = ['!','@','#','$','%','^','&','*'];
-// var numberChar = ['1','2','3','4','5','6','7','8','9','0'];
 var password = "";
 var keyChar = "";
 
