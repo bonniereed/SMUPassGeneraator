@@ -77,7 +77,7 @@ var keyChar = "";
   }
     // runs through each of the listed if statements and increments until passOptionlen user is met.
   for (let index = password.length; index < passOptionLen; index++) {
-    //If user did not make a selection this alerts the user that it is required.
+    //Choose nothing increments on each ot the prompts if a user selects 'ok'. If user did not make a selection, this alerts the user that it is required.
     if (chooseNothing === 0 ) {
       alert ("You must make a selection from the character prompts.");
       generatePassword();
