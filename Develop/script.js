@@ -9,19 +9,22 @@ var numberChar = ['1234567890'];
 // var numberChar = ['1','2','3','4','5','6','7','8','9','0'];
 var password = "";
 var keyChar = "";
-  //prompts user for password length. 
+
   function hasUpper() {
     var upperCaseChar = window.confirm("Would you like upper case letters in your password?");
     return upperCaseChar;
   }
+  //Prompts user for use of lowercase letters in password
   function hasLower() {
     var lowerCaseChar = window.confirm("Would you like lower case letters in your password?");
     return lowerCaseChar;
   }
+  //Prompts user for use of special characters in password
   function hasSpec() {
     var specialChar = window.confirm("Would you like special characters in your password?");
     return specialChar;
   }
+  //Prompts user for use of numbers in password
   function hasNum() {
     var numberChar = window.confirm("Would you like numbers in your password?");
     return numberChar;
@@ -43,7 +46,18 @@ function generatePassword(){
   password = "";
 
 
-  if (upperCaseChar) {
+  const generatePassword = (passOptionlen, keyChar) => {
+    let password = "";
+    for (let i = 0; i < passOptionlen; i++) {
+      password += keyChar.charAt(
+        Math.floor(Math.random() * passOptionlen.length)
+      );
+    }
+    return password;
+  };
+
+
+  if (upperCaseChar === ) {
     keyChar= keyChar + upperCaseChar;
     password = password + upperCaseChar[(Math.floor(Math.random()*upperCaseChar.length))];
   }
