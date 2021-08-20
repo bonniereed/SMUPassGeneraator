@@ -11,69 +11,54 @@ var password = "";
 var keyChar = "";
 
   function hasUpper() {
-    var upperCaseChar = window.confirm("Would you like upper case letters in your password?");
-    return upperCaseChar;
+    var upChars = window.confirm("Would you like upper case letters in your password?");
+    return upChars;
   }
   //Prompts user for use of lowercase letters in password
   function hasLower() {
-    var lowerCaseChar = window.confirm("Would you like lower case letters in your password?");
-    return lowerCaseChar;
+    var lowChars = window.confirm("Would you like lower case letters in your password?");
+    return lowChars;
   }
   //Prompts user for use of special characters in password
   function hasSpec() {
-    var specialChar = window.confirm("Would you like special characters in your password?");
-    return specialChar;
+    var specChars = window.confirm("Would you like special characters in your password?");
+    return specChars;
   }
   //Prompts user for use of numbers in password
   function hasNum() {
-    var numberChar = window.confirm("Would you like numbers in your password?");
-    return numberChar;
+    var numChars = window.confirm("Would you like numbers in your password?");
+    return numChars;
   }
 
-
-
-function generatePassword(){
-   //prompts user for password length.
+    function generatePassword(){
+      //prompts user for password length.
   var passOptionLen = window.prompt("How many characters would you like your password length? (8\-128)");
   while((parseInt(passOptionLen) < 8 ) || (passOptionLen !== parseInt(passOptionLen, 10).toString()) || (parseInt(passOptionLen) > 128 )){
     alert ("You did not enter a valid number.");
     passOptionLen = window.prompt("How many characters would you like your password length? (8\-128)");
   }
-  var upperCaseChar = hasUpper();
-  var lowerCaseChar = hasLower();
-  var specialChar = hasSpec();
-  var numberChar = hasNum();
+  var upChars = hasUpper();
+  var lowChars = hasLower();
+  var specChars = hasSpec();
+  var numChars = hasNum();
   password = "";
 
-
-  const generatePassword = (passOptionlen, keyChar) => {
-    let password = "";
-    for (let i = 0; i < passOptionlen; i++) {
-      password += keyChar.charAt(
-        Math.floor(Math.random() * passOptionlen.length)
-      );
-    }
-    return password;
-  };
-
-
-  if (upperCaseChar === ) {
+  if (upChars) {
     keyChar= keyChar + upperCaseChar;
     password = password + upperCaseChar[(Math.floor(Math.random()*upperCaseChar.length))];
   }
-  if (lowerCaseChar) {
+  if (lowChars) {
     keyChar= keyChar + lowerCaseChar;
     password = password + lowerCaseChar[(Math.floor(Math.random()*lowerCaseChar.length))];
   }
-  if (specialChar) {
+  if (specChars) {
     keyChar= keyChar + specialChar;
     password = password + specialChar[(Math.floor(Math.random()*specialChar.length))];
   }
-  if (numberChar) {
+  if (numChars) {
     keyChar= keyChar + numberChar;
     password = password + numberChar[(Math.floor(Math.random()*numberChar.length))];
   }
-
 
   for (let index = password.length; index < passOptionLen; index++) {
     password = password + keyChar[(Math.floor(Math.random()*keyChar.length))];
